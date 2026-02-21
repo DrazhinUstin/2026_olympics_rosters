@@ -14,11 +14,12 @@ export interface Defenseman extends Player {
   goals: number;
   assists: number;
   points: number;
+  plus_minus: string;
   time_on_ice_per_game_played: string;
 }
 
 export interface Forward extends Defenseman {
-  position: 'L' | 'R' | 'C';
+  position: 'LW' | 'RW' | 'C';
 }
 
 export interface Goalie extends Player {
@@ -28,4 +29,10 @@ export interface Goalie extends Player {
   save_percentage: number;
   goals_against_average: number;
   time_on_ice: string;
+}
+
+export interface Team {
+  forwards: Forward[];
+  defensemen: Defenseman[];
+  goalies: Goalie[];
 }
