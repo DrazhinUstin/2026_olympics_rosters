@@ -1,7 +1,12 @@
 import './App.css';
+import TeamsProvider from './teams-provider';
 
 function App() {
-  return <div>Test</div>;
+  return (
+    <TeamsProvider>
+      <div>Test</div>
+    </TeamsProvider>
+  );
 }
 
 export default App;
