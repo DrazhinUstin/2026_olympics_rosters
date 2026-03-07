@@ -40,7 +40,7 @@ export default function SortableTable({
               }
             >
               {key}
-              {sort && <span>{sort.order === 'desc' ? '▼' : '▲'}</span>}
+              {sort?.propertyName === key && <span>{sort.order === 'desc' ? '▼' : '▲'}</span>}
             </th>
           ))}
         </tr>

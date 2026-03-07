@@ -1,12 +1,15 @@
 import './App.css';
+import AddTeamButton from './components/add-team-button';
+import TeamList from './components/team-list';
 import TeamsProvider from './teams-provider';
 
-function App() {
+export default function App() {
   return (
     <TeamsProvider>
-      <div>Test</div>
+      <main>
+        <TeamList />
+        <AddTeamButton />
+      </main>
     </TeamsProvider>
   );
 }
-
-export default App;
