@@ -6,7 +6,7 @@ import TeamsProvider from './teams-provider';
 export default function App() {
   return (
     <TeamsProvider>
-      <main>
+      <main className='main-container'>
         <TeamList />
         <AddTeamButton />
       </main>

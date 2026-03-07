@@ -263,7 +263,7 @@ export const teamUSA: Team = {
       name: 'Zach Werenski',
       born: '7/19/1997',
       league: 'NHL',
-      team: '7/19/1997',
+      team: 'Columbus Blue Jackets',
       height: 188,
       weight: 97,
       shoots: 'L',

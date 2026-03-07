@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import type { Defenseman, Forward, Goalie } from '../lib/definitions';
+import { abbreviations, type Defenseman, type Forward, type Goalie } from '../lib/definitions';
 import { sortObjects } from '../lib/utils';
+import styles from './sortable-table.module.css';
 
 export default function SortableTable({
   data,
@@ -24,13 +25,15 @@ export default function SortableTable({
     : data;
 
   return (
-    <table>
+    <table className={styles.table}>
       <caption>{caption}</caption>
       <thead>
         <tr>
           {Object.keys(data[0]).map((key) => (
             <th
               key={key}
+              title={key}
+              className={key === sort?.propertyName ? styles.active : undefined}
               onClick={() =>
                 setSort({
                   propertyName: key,
@@ -39,7 +42,7 @@ export default function SortableTable({
                 })
               }
             >
-              {key}
+              {abbreviations[key as keyof typeof abbreviations]}
               {sort?.propertyName === key && <span>{sort.order === 'desc' ? '▼' : '▲'}</span>}
             </th>
           ))}
@@ -48,8 +51,10 @@ export default function SortableTable({
       <tbody>
         {sortedData.map((item) => (
           <tr key={item.number}>
-            {Object.values(item).map((value, index) => (
-              <td key={index}>{value}</td>
+            {Object.entries(item).map(([key, value]) => (
+              <td key={key} className={key === sort?.propertyName ? styles.active : undefined}>
+                {value}
+              </td>
             ))}
           </tr>
         ))}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { teams as teamsData } from '../lib/data';
 import { useTeamsContext } from '../teams-context';
+import styles from './add-team-button.module.css';
 
 const teams = Object.keys(teamsData);
 
@@ -14,7 +15,7 @@ export default function AddTeamButton() {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <select value={selectedTeam} onChange={(e) => setSelectedTeam(e.target.value)}>
         {teams.map((team) => (
           <option key={team} value={team}>
@@ -23,7 +24,7 @@ export default function AddTeamButton() {
         ))}
       </select>
       <button type='button' onClick={handleClick}>
-        Add team
+        + Add team
       </button>
     </div>
   );

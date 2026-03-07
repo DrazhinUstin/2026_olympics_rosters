@@ -36,3 +36,29 @@ export interface Team {
   defensemen: Defenseman[];
   goalies: Goalie[];
 }
+
+export type Abbreviations = Record<keyof Forward | keyof Defenseman | keyof Goalie, string>;
+
+export const abbreviations: Abbreviations = {
+  number: '№',
+  name: 'Name',
+  league: 'League',
+  team: 'Team',
+  born: 'Born',
+  height: 'HT',
+  weight: 'WT',
+  games_played: 'GP',
+  shoots: 'S',
+  goals: 'G',
+  assists: 'A',
+  points: 'P',
+  plus_minus: '+/-',
+  time_on_ice_per_game_played: 'TOI/GP',
+  position: 'Pos',
+  wins: 'W',
+  losses: 'L',
+  overtime_losses: 'OT',
+  save_percentage: 'SV%',
+  goals_against_average: 'GAA',
+  time_on_ice: 'TOI',
+};
