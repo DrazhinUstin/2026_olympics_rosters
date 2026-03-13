@@ -4,6 +4,11 @@ import styles from './team-list.module.css';
 
 export default function TeamList() {
   const { selectedTeams } = useTeamsContext();
+
+  if (!selectedTeams.length) {
+    return null;
+  }
+
   return (
     <div className={styles.list}>
       {selectedTeams.map((team) => (
