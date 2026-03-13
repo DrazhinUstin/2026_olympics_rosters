@@ -25,40 +25,46 @@ export default function SortableTable({
     : data;
 
   return (
-    <table className={styles.table}>
-      <caption>{caption}</caption>
-      <thead>
-        <tr>
-          {Object.keys(data[0]).map((key) => (
-            <th
-              key={key}
-              title={key}
-              className={key === sort?.propertyName ? styles.active : undefined}
-              onClick={() =>
-                setSort({
-                  propertyName: key,
-                  order:
-                    sort?.propertyName === key ? (sort.order === 'desc' ? 'asc' : 'desc') : 'desc',
-                })
-              }
-            >
-              {abbreviations[key as keyof typeof abbreviations]}
-              {sort?.propertyName === key && <span>{sort.order === 'desc' ? '▼' : '▲'}</span>}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {sortedData.map((item) => (
-          <tr key={item.number}>
-            {Object.entries(item).map(([key, value]) => (
-              <td key={key} className={key === sort?.propertyName ? styles.active : undefined}>
-                {value}
-              </td>
+    <div className={styles.wrapper}>
+      <table className={styles.table}>
+        <caption>{caption}</caption>
+        <thead>
+          <tr>
+            {Object.keys(data[0]).map((key) => (
+              <th
+                key={key}
+                title={key}
+                className={key === sort?.propertyName ? styles.active : undefined}
+                onClick={() =>
+                  setSort({
+                    propertyName: key,
+                    order:
+                      sort?.propertyName === key
+                        ? sort.order === 'desc'
+                          ? 'asc'
+                          : 'desc'
+                        : 'desc',
+                  })
+                }
+              >
+                {abbreviations[key as keyof typeof abbreviations]}
+                {sort?.propertyName === key && <span>{sort.order === 'desc' ? '▼' : '▲'}</span>}
+              </th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {sortedData.map((item) => (
+            <tr key={item.number}>
+              {Object.entries(item).map(([key, value]) => (
+                <td key={key} className={key === sort?.propertyName ? styles.active : undefined}>
+                  {value}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
