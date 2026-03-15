@@ -8,3 +8,9 @@
     margin-top: 2rem;
   }
 }
+
+.main-logo {
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+}

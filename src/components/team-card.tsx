@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { teams as teamsData } from '../lib/data';
+import { flags, teams as teamsData } from '../lib/data';
 import type { Team } from '../lib/definitions';
 import type { TeamsContextType } from '../teams-context';
 import RemoveTeamButton from './remove-team-button';
@@ -28,6 +28,7 @@ export default function TeamCard({ team }: { team: TeamsContextType['selectedTea
   return (
     <article className={styles.card}>
       <header>
+        <img src={flags[team.name]} alt='team flag' />
         <h3>{team.name}</h3>
         <RemoveTeamButton teamId={team.id} />
       </header>

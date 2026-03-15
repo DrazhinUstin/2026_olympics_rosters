@@ -1,4 +1,6 @@
 import type { Team } from './definitions';
+import usaFlag from '../assets/Flag_of_the_United_States.svg';
+import canadaFlag from '../assets/Flag_of_Canada.svg';
 
 export const teamUSA: Team = {
   forwards: [
@@ -847,3 +849,5 @@ export const teamCanada: Team = {
 };
 
 export const teams: Record<string, Team> = { USA: teamUSA, Canada: teamCanada };
+
+export const flags: Record<string, string> = { USA: usaFlag, Canada: canadaFlag };

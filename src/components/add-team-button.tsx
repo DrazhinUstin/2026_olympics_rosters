@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { teams as teamsData } from '../lib/data';
 import { useTeamsContext } from '../teams-context';
 import styles from './add-team-button.module.css';
+import { PlusIcon } from 'lucide-react';
 
 const teams = Object.keys(teamsData);
 
@@ -24,7 +25,7 @@ export default function AddTeamButton() {
         ))}
       </select>
       <button type='button' onClick={handleClick}>
-        + Add team
+        <PlusIcon size={16} /> Add team
       </button>
     </div>
   );

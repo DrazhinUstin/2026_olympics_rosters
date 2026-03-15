@@ -1,3 +1,4 @@
+import { XIcon } from 'lucide-react';
 import { useTeamsContext } from '../teams-context';
 import styles from './remove-team-button.module.css';
 
@@ -10,7 +11,7 @@ export default function RemoveTeamButton({ teamId }: { teamId: number }) {
 
   return (
     <button type='button' title='Remove team' className={styles.button} onClick={handleClick}>
-      X
+      <XIcon size={16} />
     </button>
   );
 }
