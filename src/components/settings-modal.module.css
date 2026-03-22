@@ -1,0 +1,26 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+  z-index: 999;
+}
+
+.modal {
+  width: 90vw;
+  max-width: 576px;
+  padding: 2rem;
+  border-radius: var(--radius);
+  background-color: var(--clr-background);
+
+  & > *:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  & > :last-child {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 0.5rem;
+  }
+}
