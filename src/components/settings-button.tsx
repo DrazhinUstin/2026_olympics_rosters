@@ -8,7 +8,12 @@ export default function SettingsButton() {
 
   return (
     <>
-      <button type='button' title='Settings' className={styles.button} onClick={toggleModal}>
+      <button
+        type='button'
+        title='Settings'
+        className={`btn ${styles.button}`}
+        onClick={toggleModal}
+      >
         <SettingsIcon />
       </button>
       {isModalOpen && <SettingsModal />}

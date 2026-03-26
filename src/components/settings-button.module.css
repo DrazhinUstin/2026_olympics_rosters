@@ -5,10 +5,5 @@
   z-index: 99;
   width: 2rem;
   height: 2rem;
-  display: grid;
-  place-items: center;
-  border: none;
-  border-radius: var(--radius);
-  background-color: var(--clr-primary);
-  color: var(--clr-primary-foreground);
+  padding: 0;
 }

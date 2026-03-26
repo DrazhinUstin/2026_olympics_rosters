@@ -33,7 +33,7 @@ export default function TeamCard({ team }: { team: TeamsContextType['selectedTea
         <RemoveTeamButton teamId={team.id} />
       </header>
       <div>
-        <select onChange={handleChange}>
+        <select className='select' onChange={handleChange}>
           {['all', ...Object.keys(positions)].map((pos) => (
             <option key={pos} value={pos}>
               {positions[pos as keyof Team] ?? 'All positions'}

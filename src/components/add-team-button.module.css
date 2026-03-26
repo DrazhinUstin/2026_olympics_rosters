@@ -3,24 +3,4 @@
   justify-content: center;
   align-items: center;
   column-gap: 0.5rem;
-
-  select {
-    height: 2rem;
-    padding: 0 0.5rem;
-    border: 1px solid var(--clr-border);
-    border-radius: var(--radius);
-    background-color: var(--clr-background);
-    color: var(--clr-foreground);
-  }
-
-  button {
-    height: 2rem;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 0.5rem;
-    border: none;
-    border-radius: var(--radius);
-    background-color: var(--clr-primary);
-    color: var(--clr-primary-foreground);
-  }
 }

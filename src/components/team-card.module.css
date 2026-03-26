@@ -14,13 +14,4 @@
       width: auto;
     }
   }
-
-  select {
-    height: 2rem;
-    padding: 0 0.5rem;
-    border: 1px solid var(--clr-border);
-    border-radius: var(--radius);
-    background-color: var(--clr-background);
-    color: var(--clr-foreground);
-  }
 }

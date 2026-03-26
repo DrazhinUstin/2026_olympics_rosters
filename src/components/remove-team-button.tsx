@@ -10,7 +10,12 @@ export default function RemoveTeamButton({ teamId }: { teamId: number }) {
   };
 
   return (
-    <button type='button' title='Remove team' className={styles.button} onClick={handleClick}>
+    <button
+      type='button'
+      title='Remove team'
+      className={`btn-destructive ${styles.button}`}
+      onClick={handleClick}
+    >
       <XIcon size={16} />
     </button>
   );
